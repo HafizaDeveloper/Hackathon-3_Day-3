@@ -1,5 +1,5 @@
-import client, { urlFor } from '@/sanity/lib/client';
 import Navbar from '../components/Navbar';
+import client, { urlFor } from '@/sanity/lib/client';
 
 export default async function ChefsPage() {
   const chefs = await client.fetch('*[_type == "chef"]');
@@ -24,10 +24,13 @@ export default async function ChefsPage() {
               )}
               <div className="p-5">
                 <h2 className="text-xl font-semibold">{chef.name}</h2>
-                <p className="text-green-600 font-bold">{chef.position}</p>
-                <p className="text-green-600 font-bold mt-1">{chef.specialty}</p>
-                <p className="text-sm text-gray-700 font-bold mt-1">Experience: {chef.experience} years</p>
-                <p className="text-sm text-gray-700 mt-2">{chef.description}</p>
+                <p className="text-gray-500">{chef.specialty}</p>
+                <a
+                  href={`/chefs/${chef._id}`}
+                  className="text-blue-500 hover:underline mt-3 block"
+                >
+                  View Details
+                </a>
               </div>
             </div>
           ))}

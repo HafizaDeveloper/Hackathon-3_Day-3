@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar";
+import Navbar from './components/Navbar';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
-      <div className="max-w-7xl mx-auto text-center py-20 px-5">
+      <div className="max-w-7xl mx-auto text-center py-20 px-5 my-20">
         <h1 className="text-5xl font-bold text-gray-800 mb-6">
           Welcome to FoodTuck!
         </h1>
