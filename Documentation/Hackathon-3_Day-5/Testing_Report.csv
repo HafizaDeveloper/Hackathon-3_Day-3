@@ -1,0 +1,16 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC-001,Validate overall responsiveness,"Test the entire website on different screen sizes (mobile, tablet, desktop)",All pages should display correctly with proper layout and functionality on all devices,All pages responsive with layout intact,Passed,Low,--,Verified responsiveness across all screen sizes
+TC-002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Medium,--,Handled gracefully
+FT-001 (Food Test ID),Validate product listing,Visit /food page,Products are listed correctly,Products displayed as expected,Passed,Low,--,All products loaded successfully
+FT-002,Search functionality,Type 'Burger' in search bar,Products with 'Burger' appear,No products displayed,Failed (Troubleshooting in process),Medium,--,Search query case mismatch
+FT-003,Validate product detail page,Click on a product image on /food page,Product detail page opens with correct info,Correct details displayed,Passed,Low,--,Product Details Loaded Successfully
+FT-004,Add to Cart functionality,Click 'Add to Cart' on a product detail page,Product is added to cart with correct quantity,Cart updated successfully,Passed,Low,--,Verified cart updates with correct product and quantity without errors
+FT-005,Handle missing food data,Simulate API failure or no data response,Display fallback UI with error message,No foods available' displayed,Passed,Medium,--,Fallback UI working
+FT-006,Validate category filter,Select a category from the dropdown on /food page,Only products belonging to the selected category are displayed,Correct filtered results displayed,Passed,Low,--,Category filter working as expected
+FT-007,Cross-browser compatibility for food,"Test /food and /foodDetail page on Chrome, Firefox, Edge, and Safari",Food and foodDetail page is displayed correctly on all browsers,All browsers render correctly,Passed,Low,--,Verified responsiveness and consistency across all major browsers
+FT-008,Validate pagination on food page,"Click on pagination buttons (Next, Previous) on /food page",Correct products for the selected page are displayed,Pagination works correctly,Passed,Low,--,Pagination working as expected on the food page
+CT-001 (Chef Test ID),Validate chef listing,Visit /chefs page,Chefs are listed correctly,All chefs displayed as expected,Passed,Low,--,All chefs loaded successfully
+CT-002,Validate chef detail page,Click on a chef image on /chefs page,Chef detail page opens with correct info,Correct details displayed,Passed,Low,--,Chef Details Loaded Successfully
+CT-003,Handle missing chef data,Simulate API failure or no data response,Display fallback UI with error message,No chefs available' displayed,Passed,Medium,--,Fallback UI working
+CT-004,Cross-browser compatibility for chefs,"Test /chefs and /chefDetail page on Chrome, Firefox, Edge, and Safari",Chefs and chefDetail page is displayed correctly on all browsers,All browsers render correctly,Passed,Low,--,Verified responsiveness and consistency across all major browsers
+,,,,,,,,
