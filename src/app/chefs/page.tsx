@@ -1,8 +1,19 @@
 import Navbar from '../components/Navbar';
 import client, { urlFor } from '@/sanity/lib/client';
 
+interface Chef {
+  _id: string;
+  name: string;
+  specialty: string;
+  image?: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
 export default async function ChefsPage() {
-  const chefs = await client.fetch('*[_type == "chef"]');
+  const chefs: Chef[] = await client.fetch('*[_type == "chef"]');
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -10,7 +21,7 @@ export default async function ChefsPage() {
       <div className="max-w-7xl mx-auto py-10 px-5">
         <h1 className="text-4xl font-bold text-gray-800 mb-8">Our Chefs</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {chefs.map((chef: any) => (
+          {chefs.map((chef) => (
             <div
               key={chef._id}
               className="bg-white shadow-md rounded-lg overflow-hidden"

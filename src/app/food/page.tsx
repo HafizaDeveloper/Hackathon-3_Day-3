@@ -6,8 +6,22 @@ import ProductCard from '../components/ProductCard';
 import SearchBar from '../components/SearchBar';
 import client from '@/sanity/lib/client';
 
+// Define the Food type
+interface Food {
+  _id: string;
+  name: string;
+  category: string;
+  price: number;
+  description?: string;
+  image?: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
 export default function FoodPage() {
-  const [foods, setFoods] = useState<any[]>([]); // State to store all food items
+  const [foods, setFoods] = useState<Food[]>([]); // State to store all food items
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null); // Category filter
   const [searchQuery, setSearchQuery] = useState<string>(''); // Search filter
   const [currentPage, setCurrentPage] = useState(1); // Pagination
@@ -69,7 +83,7 @@ export default function FoodPage() {
 
         {/* Food Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {paginatedFoods.map((food: any) => (
+          {paginatedFoods.map((food) => (
             <ProductCard key={food._id} food={food} />
           ))}
         </div>

@@ -3,10 +3,16 @@
 import Navbar from '../components/Navbar';
 import { useCart } from '../context/CartContext';
 
+interface CartItem {
+  _id: string;
+  name: string;
+  price: number;
+}
+
 export default function CartPage() {
   const { cart, removeFromCart, clearCart } = useCart();
 
-  const totalPrice = cart.reduce((acc: any, item: { price: any; }) => acc + item.price, 0);
+  const totalPrice = cart.reduce((acc: number, item: CartItem) => acc + item.price, 0);
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -16,7 +22,7 @@ export default function CartPage() {
         {cart.length > 0 ? (
           <>
             <ul>
-              {cart.map((item: any) => (
+              {cart.map((item: CartItem) => (
                 <li key={item._id} className="flex items-center justify-between bg-white p-4 shadow mb-4 rounded-lg">
                   <div>
                     <h2 className="text-lg font-semibold">{item.name}</h2>

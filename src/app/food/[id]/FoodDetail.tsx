@@ -4,9 +4,23 @@ import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { urlFor } from '@/sanity/lib/client';
 
-export default function FoodDetail({ food }: { food: any }) {
+type Food = {
+  _id: string;
+  name: string;
+  category: string;
+  price: number;
+  description?: string;
+  image: { asset: { _ref: string; url: string } };
+};
+
+// New type that includes 'quantity' with 'food' properties
+type FoodWithQuantity = Food & {
+  quantity: number;
+};
+
+export default function FoodDetail({ food }: { food: Food }) {
   const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number>(1); // Explicitly typing quantity as a number
 
   return (
     <div className="max-w-4xl mx-auto py-10 px-5">
@@ -41,7 +55,7 @@ export default function FoodDetail({ food }: { food: any }) {
 
           {/* Add to Cart */}
           <button
-            onClick={() => addToCart({ ...food, quantity })}
+            onClick={() => addToCart({ ...food, quantity } as FoodWithQuantity)} // Typecasting
             className="mt-6 bg-yellow-500 text-white px-6 py-3 rounded hover:bg-yellow-600"
           >
             Add to Cart
