@@ -37,6 +37,8 @@ FoodTuck is a dynamic and responsive online marketplace for ordering food, featu
 │   │   ├── page.tsx         # Chefs listing page
 │   │   ├── [id]/            # Chef detail pages
 │   │       ├── page.tsx     # Dynamic routing for chef details
+│   ├── cart/                # Cart page
+│   │   ├── page.tsx         # Displays items added to the cart
 │   ├── components/          # Reusable components like Navbar and ProductCard
 ├── context/                 # Context for global state (e.g., CartContext)
 ├── styles/                  # Global and component-specific styles
@@ -44,46 +46,60 @@ FoodTuck is a dynamic and responsive online marketplace for ordering food, featu
 ├── client.ts                # Sanity client configuration
 ├── next.config.ts           # Next.js configuration
 
-Setup and Installation
-Clone the repository:
+---
 
-bash
-Copy
-Edit
-git clone https://github.com/yourgithubusername/FoodTuck.git
-cd FoodTuck
-Install dependencies:
+## Setup and Installation
 
-bash
-Copy
-Edit
-npm install
-Create a .env file: Add the following environment variables to connect with Sanity CMS:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourgithubusername/FoodTuck.git
+   cd FoodTuck
+   ```
 
-plaintext
-Copy
-Edit
-NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
-NEXT_PUBLIC_SANITY_DATASET=production
-Run the development server:
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-bash
-Copy
-Edit
-npm run dev
-Open the app: Visit http://localhost:3000 in your browser.
+3. **Create a `.env` file**:  
+   Add the following environment variables to connect with Sanity CMS:
+   ```
+   NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_SANITY_DATASET=production
+   ```
 
-Testing
-Types of Tests
-Functional Testing:
-Validates product listing, search, filters, and detail pages.
-Performance Testing:
-Optimized for speed and responsiveness using Lighthouse.
-Security Testing:
-Ensures secure API key handling and proper input validations.
-Test Reports
-Testing results are documented in the Testing_Report.csv file available in the repository. Performance testing details are included in the Day 6 PDF.
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-Deployment
-The project is deployed on Vercel.
-The staging environment link will be available here once deployment is finalized.
+5. **Open the app**:  
+   Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Testing
+
+1. **Types of Tests**:
+   - **Functional Testing**:  
+     Validates product listing, search, filters, and detail pages.
+   - **Performance Testing**:  
+     Optimized for speed and responsiveness using Lighthouse.
+   - **Security Testing**:  
+     Ensures secure API key handling and proper input validations.
+
+2. **Test Reports**:  
+   - Testing results are documented in the `Testing_Report.csv` file available in the repository.  
+
+---
+
+## Deployment
+
+1. The project is deployed on **Vercel**.  
+2. The staging environment link will be available here once deployment is finalized.
+
+---
+
+## Contributors
+
+- **Hafiza Mahnoor M.Ayub** ([GitHub Profile](https://github.com/HafizaDeveloper))
