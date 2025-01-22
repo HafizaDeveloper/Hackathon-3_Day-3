@@ -2,7 +2,7 @@ Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Stat
 TC-001,Validate overall responsiveness,"Test the entire website on different screen sizes (mobile, tablet, desktop)",All pages should display correctly with proper layout and functionality on all devices,All pages responsive with layout intact,Passed,Low,--,Verified responsiveness across all screen sizes
 TC-002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Medium,--,Handled gracefully
 FT-001 (Food Test ID),Validate product listing,Visit /food page,Products are listed correctly,Products displayed as expected,Passed,Low,--,All products loaded successfully
-FT-002,Search functionality,Type 'Burger' in search bar,Products with 'Burger' appear,No products displayed,Failed (Troubleshooting in process),Medium,--,Search query case mismatch
+FT-002,Search functionality,Type 'Burger' in search bar,Products with 'Burger' appear,Coorect food items displayed,Passed,Medium,--,Verified Search Functionality
 FT-003,Validate product detail page,Click on a product image on /food page,Product detail page opens with correct info,Correct details displayed,Passed,Low,--,Product Details Loaded Successfully
 FT-004,Add to Cart functionality,Click 'Add to Cart' on a product detail page,Product is added to cart with correct quantity,Cart updated successfully,Passed,Low,--,Verified cart updates with correct product and quantity without errors
 FT-005,Handle missing food data,Simulate API failure or no data response,Display fallback UI with error message,No foods available' displayed,Passed,Medium,--,Fallback UI working
