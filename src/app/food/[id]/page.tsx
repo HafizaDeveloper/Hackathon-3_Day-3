@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar';
 import FoodDetail from './FoodDetail';
 import client from '@/sanity/lib/client';
 
@@ -12,7 +11,6 @@ export default async function FoodDetailPage({ params }: { params: { id: string 
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
       {/* Pass fetched data to the Client Component */}
       <FoodDetail food={food} />
     </div>

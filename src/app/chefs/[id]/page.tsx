@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar';
 import client, { urlFor } from '@/sanity/lib/client';
 
 export default async function ChefDetailPage({ params }: { params: { id: string } }) {
@@ -10,7 +9,6 @@ export default async function ChefDetailPage({ params }: { params: { id: string 
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
       <div className="max-w-4xl mx-auto py-10 px-5">
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           {chef.image && (

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import SearchBar from '../components/SearchBar';
 import client from '@/sanity/lib/client';
@@ -56,7 +55,6 @@ export default function FoodPage() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
       <div className="max-w-7xl mx-auto py-10 px-5">
         <h1 className="text-4xl font-bold text-gray-800 mb-8">Food Items</h1>
 

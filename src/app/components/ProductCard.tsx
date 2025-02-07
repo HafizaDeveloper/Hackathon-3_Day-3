@@ -1,7 +1,15 @@
 import { urlFor } from '@/sanity/lib/client';
 import Link from 'next/link';
 
-export default function ProductCard({ food }: { food: any }) {
+type Food = {
+  _id: string;
+  name: string;
+  category: string;
+  price: number;
+  image?: { asset: { _ref: string } }; // Optional image type
+};
+
+export default function ProductCard({ food }: { food: Food }) {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
       {/* Wrap the image in a Link */}

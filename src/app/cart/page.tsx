@@ -1,6 +1,5 @@
 'use client';
 
-import Navbar from '../components/Navbar';
 import { useCart } from '../context/CartContext';
 
 interface CartItem {
@@ -16,7 +15,6 @@ export default function CartPage() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
       <div className="max-w-7xl mx-auto py-10 px-5">
         <h1 className="text-4xl font-bold text-gray-800 mb-8">Your Cart</h1>
         {cart.length > 0 ? (
