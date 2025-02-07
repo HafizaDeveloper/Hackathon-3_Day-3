@@ -1,7 +1,13 @@
 import client, { urlFor } from '@/sanity/lib/client';
 
-export default async function ChefDetailPage({ params }: { params: { id: string } }) {
-  const chef = await client.fetch(`*[_type == "chef" && _id == "${params.id}"][0]`);
+interface ChefDetailPageProps {
+  params: { id: string };
+}
+
+export default async function ChefDetailPage({ params }: ChefDetailPageProps) {
+  const { id } = params; // ✅ Params destructuring
+
+  const chef = await client.fetch(`*[_type == "chef" && _id == $id][0]`, { id });
 
   if (!chef) {
     return <div>Chef not found</div>;
@@ -19,7 +25,7 @@ export default async function ChefDetailPage({ params }: { params: { id: string 
             />
           )}
           <div className="p-6">
-          <h2 className="text-xl font-semibold">{chef.name}</h2>
+            <h2 className="text-xl font-semibold">{chef.name}</h2>
             <p className="text-green-600 font-bold">{chef.position}</p>
             <p className="text-green-600 font-bold mt-1">{chef.specialty}</p>
             <p className="text-sm text-gray-700 font-bold mt-1">Experience: {chef.experience} years</p>
